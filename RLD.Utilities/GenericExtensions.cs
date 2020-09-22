@@ -207,6 +207,19 @@ namespace RLD.Utilities.Extensions
         }
 
         /// <summary>
+        /// Retrieves a random member of an IEnumerable
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static T Random<T>(this List<T> obj)
+        {
+            Random _rnd = new Random();
+            var randomIndex = _rnd.Next(0, obj.Count);
+            return obj[randomIndex];
+        }
+
+        /// <summary>
         /// Removes a value from the caller.
         /// </summary>
         // <typeparam name="T">The generic value type.</typeparam>
